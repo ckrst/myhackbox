@@ -1,8 +1,21 @@
 .vagrant
 data/*.ovpn
 
-data/htb/challenges/web/gunship/Gunship
-data/htb/challenges/web/LoveTok/web_lovetok
-data/htb/challenges/web/WeatherApp/web_weather_app
-data/htb/challenges/web/Toxic/web_toxic
 data/htb/challenges/crypto/BabyEncryption/chall.py
+
+data/htb/challenges/pwn/racecar/racecar
+data/htb/challenges/pwn/racecar/__pycache__
+
+data/htb/challenges/web/gunship/Gunship
+
+data/htb/challenges/web/LoveTok/web_lovetok
+
+data/htb/challenges/web/petpet_rcbee/*.png
+data/htb/challenges/web/petpet_rcbee/*.jpg
+data/htb/challenges/web/petpet_rcbee/*.gif
+data/htb/challenges/web/petpet_rcbee/*.txt
+data/htb/challenges/web/petpet_rcbee/web_petpet_rcbee
+
+data/htb/challenges/web/WeatherApp/web_weather_app
+
+data/htb/challenges/web/Toxic/web_toxic
