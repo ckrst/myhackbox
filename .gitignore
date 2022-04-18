@@ -1,3 +1,4 @@
+.Trash-1000
 .vagrant
 data/*.ovpn
 
@@ -5,6 +6,8 @@ data/htb/challenges/crypto/BabyEncryption/chall.py
 
 data/htb/challenges/pwn/racecar/racecar
 data/htb/challenges/pwn/racecar/__pycache__
+
+data/htb/challenges/web/DiogenesRage/web_diogenes_rage
 
 data/htb/challenges/web/gunship/Gunship
 data/htb/challenges/web/baby_CachedView/web_baby_cachedview
