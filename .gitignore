@@ -5,6 +5,7 @@ data/*.ovpn
 data/htb/challenges/crypto/BabyEncryption/chall.py
 
 data/htb/challenges/misc/Canvas/canvas
+data/htb/challenges/misc/misDIRection/.secret
 
 data/htb/challenges/pwn/racecar/racecar
 data/htb/challenges/pwn/racecar/__pycache__
