@@ -17,6 +17,8 @@ data/htb/challenges/web/baby_CachedView/web_baby_cachedview
 
 data/htb/challenges/web/LoveTok/web_lovetok
 
+data/htb/challenges/web/Neonify/web_neonify
+
 data/htb/challenges/web/petpet_rcbee/*.png
 data/htb/challenges/web/petpet_rcbee/*.jpg
 data/htb/challenges/web/petpet_rcbee/*.gif
